@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Academic Railway Reservation System demo">
+  <title>Railway Reservation System</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script defer src="/js/api.js"></script>
+  <script defer src="/js/home.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="/index.html"><span class="brand-mark">R</span> Railway Reservation</a>
+      <nav class="nav-links" data-nav-links><a href="login.html">Login</a><a href="register.html">Register</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Railway Reservation System</div>
+          <h1>Plan your journey.<br>Book your seat.</h1>
+          <p>Search train schedules, check seat availability and manage your railway reservations from one place.</p>
+        </div>
+        <form class="search-card" id="searchForm">
+          <h2>Find Your Train</h2>
+          <div class="form-grid">
+            <div class="field">
+              <label for="fromStationId">From station</label>
+              <select id="fromStationId" required><option value="">Loading stations...</option></select>
+            </div>
+            <div class="field">
+              <label for="toStationId">To station</label>
+              <select id="toStationId" required><option value="">Select destination</option></select>
+            </div>
+            <div class="field full">
+              <label for="journeyDate">Journey date</label>
+              <input id="journeyDate" type="date" required>
+            </div>
+            <div class="field full">
+              <button class="btn btn-primary btn-block" type="submit">Search Trains</button>
+            </div>
+          </div>
+          <p class="muted" style="font-size:.78rem;margin:12px 0 0">Academic demo data. Train times and fares are illustrative.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="main-section">
+      <div class="container">
+        <div class="section-heading">
+          <div><h2>Available Trains</h2><p id="resultSummary">Search by route and date to see train options.</p></div>
+        </div>
+        <div id="searchMessage" aria-live="polite"></div>
+        <div id="results" class="results-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container">Railway Reservation System · Academic Project · Demo payment only</div></footer>
+</body>
+</html>

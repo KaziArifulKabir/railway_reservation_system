@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Passenger Dashboard · Railway Reservation</title><link rel="stylesheet" href="/css/style.css">
+  <script defer src="/js/api.js"></script><script defer src="/js/passenger.js"></script>
+</head>
+<body>
+  <header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">R</span> Railway Reservation</a><nav class="nav-links" data-nav-links></nav></div></header>
+  <main class="page-wrap"><div class="container">
+    <h1 class="page-title" id="welcomeTitle">Passenger Dashboard</h1><p class="page-subtitle">Manage your profile and railway bookings.</p>
+    <div id="dashboardMessage"></div>
+    <div class="stats-grid" id="passengerStats"></div>
+    <div class="dashboard-grid">
+      <section class="card"><h2>My Profile</h2><form id="profileForm" class="form-stack"><div class="field"><label for="fullName">Full name</label><input id="fullName" required></div><div class="field"><label for="email">Email</label><input id="email" disabled></div><div class="field"><label for="phone">Phone</label><input id="phone"></div><button class="btn btn-primary" type="submit">Update Profile</button></form></section>
+      <section class="card"><h2>Quick Actions</h2><div class="form-stack"><a class="btn btn-primary" href="index.html">Search Train</a><a class="btn btn-light" href="bookings.html">View Booking History</a></div><p class="muted" style="font-size:.84rem;margin-top:18px">A seat is temporarily held while you complete the demo payment. The hold expires after the configured period.</p></section>
+    </div>
+  </div></main>
+  <footer class="footer"><div class="container">Railway Reservation System · Academic Project</div></footer>
+</body>
+</html>

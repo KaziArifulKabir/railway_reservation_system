@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register · Railway Reservation</title><link rel="stylesheet" href="/css/style.css">
+  <script defer src="/js/api.js"></script><script defer src="/js/register.js"></script>
+</head>
+<body>
+  <header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">R</span> Railway Reservation</a><nav class="nav-links" data-nav-links></nav></div></header>
+  <main class="auth-layout"><section class="card auth-card">
+    <h1>Create passenger account</h1><p>Register to search trains and reserve seats.</p>
+    <div id="formMessage" aria-live="polite"></div>
+    <form id="registerForm" class="form-stack">
+      <div class="field"><label for="fullName">Full name</label><input id="fullName" required minlength="2" maxlength="120" autocomplete="name"></div>
+      <div class="field"><label for="email">Email address</label><input id="email" type="email" required maxlength="190" autocomplete="email"></div>
+      <div class="field"><label for="phone">Phone number (optional)</label><input id="phone" maxlength="25" autocomplete="tel"></div>
+      <div class="field"><label for="password">Password</label><input id="password" type="password" required minlength="8" maxlength="72" autocomplete="new-password"></div>
+      <div class="field"><label for="confirmPassword">Confirm password</label><input id="confirmPassword" type="password" required minlength="8" maxlength="72" autocomplete="new-password"></div>
+      <button class="btn btn-primary btn-block" type="submit">Create Account</button>
+    </form>
+    <p style="margin:18px 0 0">Already registered? <a href="login.html">Login</a></p>
+  </section></main>
+</body>
+</html>

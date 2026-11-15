@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Railway Authority · Railway Reservation</title><link rel="stylesheet" href="/css/style.css">
+  <script defer src="/js/api.js"></script><script defer src="/js/admin.js"></script>
+</head>
+<body>
+  <header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">R</span> Railway Reservation</a><nav class="nav-links" data-nav-links></nav></div></header>
+  <main class="page-wrap"><div class="container">
+    <h1 class="page-title">Railway Authority Dashboard</h1><p class="page-subtitle">Manage railway resources, monitor reservations and view reports.</p>
+    <div id="adminMessage"></div>
+    <div class="admin-layout">
+      <aside class="admin-sidebar" id="adminTabs">
+        <button class="active" data-section="overview">Overview</button>
+        <button data-section="trains">Trains</button>
+        <button data-section="stations">Stations</button>
+        <button data-section="routes">Routes</button>
+        <button data-section="schedules">Schedules</button>
+        <button data-section="coaches">Coaches & Seats</button>
+        <button data-section="fares">Fares</button>
+        <button data-section="users">Passengers</button>
+        <button data-section="bookings">Bookings</button>
+      </aside>
+      <div class="admin-panel">
+        <section class="admin-section active" id="section-overview"><div class="card"><h2>System Overview</h2><div id="adminStats" class="stats-grid"></div><div id="monthlyReport"></div></div></section>
+
+        <section class="admin-section" id="section-trains"><div class="card"><h2>Manage Trains</h2><form id="trainForm" class="admin-form"><div class="field"><label>Train number</label><input name="trainNumber" required></div><div class="field"><label>Train name</label><input name="trainName" required></div><div class="field"><label>Train type</label><input name="trainType" value="Intercity"></div><div class="field" style="align-self:end"><button class="btn btn-primary">Add Train</button></div></form><div id="trainTable"></div></div></section>
+
+        <section class="admin-section" id="section-stations"><div class="card"><h2>Manage Stations</h2><form id="stationForm" class="admin-form"><div class="field"><label>Station name</label><input name="stationName" required></div><div class="field"><label>Station code</label><input name="stationCode" required maxlength="20"></div><div class="field"><label>City</label><input name="city" required></div><div class="field" style="align-self:end"><button class="btn btn-primary">Add Station</button></div></form><div id="stationTable"></div></div></section>
+
+        <section class="admin-section" id="section-routes"><div class="card"><h2>Manage Routes</h2><p class="muted">Enter station IDs in route order, separated by commas. You can find IDs in the station list.</p><form id="routeForm" class="admin-form"><div class="field full"><label>Route name</label><input name="routeName" required></div><div class="field full"><label>Ordered station IDs</label><input name="stationIds" placeholder="Example: 1,2,3,4" required></div><div class="field full"><label>Arrival/departure offsets in minutes (comma-separated)</label><input name="offsets" placeholder="Example: 0,20,180,360" required></div><div class="field full"><button class="btn btn-primary">Create Route</button></div></form><div id="routeTable"></div></div></section>
+
+        <section class="admin-section" id="section-schedules"><div class="card"><h2>Manage Schedules</h2><form id="scheduleForm" class="admin-form"><div class="field"><label>Train ID</label><input name="trainId" type="number" min="1" required></div><div class="field"><label>Route ID</label><input name="routeId" type="number" min="1" required></div><div class="field"><label>Departure time</label><input name="departureTime" type="time" required></div><div class="field full"><label>Operating days (1=Sunday, 2=Monday ... 7=Saturday)</label><input name="days" value="1,2,3,4,5,6,7" required></div><div class="field full"><button class="btn btn-primary">Create Schedule</button></div></form><div id="scheduleTable"></div></div></section>
+
+        <section class="admin-section" id="section-coaches"><div class="card"><h2>Manage Coaches & Seats</h2><form id="coachForm" class="admin-form"><div class="field"><label>Train ID</label><input name="trainId" type="number" min="1" required></div><div class="field"><label>Coach code</label><input name="coachCode" required></div><div class="field"><label>Class name</label><input name="className" placeholder="Shovon Chair" required></div><div class="field full"><label>Seat numbers (comma-separated)</label><input name="seatNumbers" placeholder="A1,A2,A3,A4" required></div><div class="field full"><button class="btn btn-primary">Create Coach & Seats</button></div></form><div id="coachTable"></div><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"><h3>Manage individual seats</h3><form id="seatLookupForm" class="admin-form"><div class="field"><label>Coach ID</label><input name="coachId" type="number" min="1" required></div><div class="field" style="align-self:end"><button class="btn btn-light">Load Seats</button></div></form><div id="seatTable"></div></div></section>
+
+        <section class="admin-section" id="section-fares"><div class="card"><h2>Manage Fares</h2><form id="fareForm" class="admin-form"><div class="field"><label>Schedule ID</label><input name="scheduleId" type="number" min="1" required></div><div class="field"><label>Class name</label><input name="className" required></div><div class="field"><label>Origin station ID</label><input name="originStationId" type="number" min="1" required></div><div class="field"><label>Destination station ID</label><input name="destinationStationId" type="number" min="1" required></div><div class="field"><label>Fare amount (BDT)</label><input name="fareAmount" type="number" min="0" step="0.01" required></div><div class="field" style="align-self:end"><button class="btn btn-primary">Save Fare</button></div></form><div id="fareTable"></div></div></section>
+
+        <section class="admin-section" id="section-users"><div class="card"><h2>Passenger Accounts</h2><div id="userTable"></div></div></section>
+        <section class="admin-section" id="section-bookings"><div class="card"><h2>All Bookings</h2><div id="adminBookingTable"></div></div></section>
+      </div>
+    </div>
+  </div></main>
+</body>
+</html>

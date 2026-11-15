@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login · Railway Reservation</title><link rel="stylesheet" href="/css/style.css">
+  <script defer src="/js/api.js"></script><script defer src="/js/login.js"></script>
+</head>
+<body>
+  <header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">R</span> Railway Reservation</a><nav class="nav-links" data-nav-links></nav></div></header>
+  <main class="auth-layout"><section class="card auth-card">
+    <h1>Welcome back</h1><p>Log in to access your railway reservation account.</p>
+    <div id="formMessage" aria-live="polite"></div>
+    <form id="loginForm" class="form-stack">
+      <div class="field"><label for="email">Email address</label><input id="email" type="email" autocomplete="username" required maxlength="190"></div>
+      <div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required minlength="8"></div>
+      <button class="btn btn-primary btn-block" type="submit">Login</button>
+    </form>
+    <p style="margin:18px 0 0">New passenger? <a href="register.html">Create an account</a></p>
+    <p class="muted" style="font-size:.78rem;margin-top:18px">Demo authority access is listed in the project README. Do not use demo credentials in production.</p>
+  </section></main>
+</body>
+</html>

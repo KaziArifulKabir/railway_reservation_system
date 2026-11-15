@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Select Seats · Railway Reservation</title><link rel="stylesheet" href="/css/style.css">
+  <script defer src="/js/api.js"></script><script defer src="/js/booking.js"></script>
+</head>
+<body>
+  <header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">R</span> Railway Reservation</a><nav class="nav-links" data-nav-links></nav></div></header>
+  <main class="page-wrap"><div class="container">
+    <h1 class="page-title">Select Your Seats</h1><p class="page-subtitle" id="journeyInfo">Loading journey details...</p>
+    <div id="bookingMessage"></div>
+    <section class="card" id="seatPanel"><h2>Available seats</h2><div class="legend"><span><i style="background:#effaf3;border:1px solid #8bc9aa"></i>Available</span><span><i style="background:#eef1f5"></i>Booked/Held</span><span><i style="background:#2866b2"></i>Selected</span></div><div id="seatGrid" class="seat-grid"></div><p id="fareInfo" class="muted"></p></section>
+    <section class="card" id="passengerPanel" style="margin-top:18px"><h2>Passenger details</h2><p class="muted">Select one or more available seats. Enter a separate passenger record for each seat.</p><div id="passengerForms"></div><button class="btn btn-primary" id="createBookingButton" type="button" disabled>Create Pending Booking</button></section>
+    <section class="card hidden" id="paymentPanel" style="margin-top:18px"><h2>Demo payment</h2><p id="paymentSummary"></p><div class="notice">This is a simulated payment gateway for the academic project. No real money will be charged.</div><div class="form-actions"><button class="btn btn-teal" id="paySuccessButton" type="button">Simulate Successful Payment</button><button class="btn btn-danger" id="payFailureButton" type="button">Simulate Failed Payment</button></div></section>
+  </div></main>
+</body>
+</html>
